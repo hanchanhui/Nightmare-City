@@ -19,7 +19,7 @@ public class AttackController : MonoBehaviour
 
     [SerializeField]
     private Camera theCam;
-    //private Crosshair thecrosshair;
+    private Crosshair thecrosshair;
 
     public int damage = 30;
 
@@ -27,7 +27,7 @@ public class AttackController : MonoBehaviour
     {
         themonsterCtrl = GetComponent<MonsterCtrl>();
         audioSource = GetComponent<AudioSource>();
-        //thecrosshair = FindObjectOfType<Crosshair>();
+        thecrosshair = FindObjectOfType<Crosshair>();
     }
 
     void Update()
@@ -83,10 +83,10 @@ public class AttackController : MonoBehaviour
 
     private void Hit()
     {
-        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward //+
-            //new Vector3(Random.Range(-thecrosshair.GetAccuracy() - currentGun.accuracy, thecrosshair.GetAccuracy() + currentGun.accuracy),
-            //            Random.Range(-thecrosshair.GetAccuracy() - currentGun.accuracy, thecrosshair.GetAccuracy() + currentGun.accuracy),
-            //            0)
+        if (Physics.Raycast(theCam.transform.position, theCam.transform.forward +
+            new Vector3(Random.Range(-thecrosshair.GetAccuracy() - currentGun.accuracy, thecrosshair.GetAccuracy() + currentGun.accuracy),
+                        Random.Range(-thecrosshair.GetAccuracy() - currentGun.accuracy, thecrosshair.GetAccuracy() + currentGun.accuracy),
+                        0)
             , out hitInfo, currentGun.range))
         {
             if (hitInfo.transform.tag == "BulletSpawner")
@@ -138,11 +138,11 @@ public class AttackController : MonoBehaviour
             Debug.Log("남은탄이 없음");
         }
     }
-    
+
     // 정조준 시도
     private void TryFineSight()
     {
-        if(Input.GetButtonDown("Fire2") && !isReload)
+        if (Input.GetButtonDown("Fire2") && !isReload)
         {
             FineSight();
         }
@@ -163,8 +163,8 @@ public class AttackController : MonoBehaviour
     }
 
 
-    
-    private void PlaySE(AudioClip _clip) // 오디오 사운드에 관한 함수.
+
+    private void PlaySE(AudioClip _clip)
     {
         audioSource.clip = _clip;
         audioSource.Play();

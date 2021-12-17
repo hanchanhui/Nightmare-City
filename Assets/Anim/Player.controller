@@ -713,7 +713,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: idle with pistol reload
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6328373916293207215}
@@ -726,7 +726,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b724f3405b5caa748b4bde4c3131f409, type: 2}
+  m_Motion: {fileID: 7400000, guid: d3a85973a148dfe4c84f85ec792af907, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
