@@ -1813,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5450115545113648025, guid: 054757ead6944584d97411bd898792bf, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 7460446486475458360, guid: 054757ead6944584d97411bd898792bf, type: 3}
       propertyPath: m_RootOrder
       value: 1
