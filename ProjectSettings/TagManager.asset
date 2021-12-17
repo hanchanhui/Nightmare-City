@@ -7,6 +7,8 @@ TagManager:
   - MachineGun
   - Itme
   - Enemy
+  - Key
+  - Portal
   layers:
   - Default
   - TransparentFX

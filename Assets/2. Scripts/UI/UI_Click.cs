@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 enum BTNType
 {
+    Next,
     Continue_Yes,
     Continue_No
 }
@@ -18,6 +19,9 @@ public class UI_Click : MonoBehaviour
     {
         switch (currentType)
         {
+            case BTNType.Next:
+                SceneManager.LoadScene("Play Scene");
+                break;
             case BTNType.Continue_Yes:
                 SceneManager.LoadScene("Play Scene");
                 break;
