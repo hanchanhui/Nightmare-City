@@ -10,7 +10,7 @@ public class AttackController : MonoBehaviour
     private float currentFireRate;
 
     private bool isReload = false;
-    private bool isfineSightMode = false;
+    public bool isfineSightMode = false;
 
     private AudioSource audioSource;
 
