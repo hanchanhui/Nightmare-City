@@ -12,7 +12,7 @@ public class PlayerCtrl : MonoBehaviour
 
     public float smoothness = 10f;
 
-    
+
     //------------------------------------------------
     //private Rigidbody playerRigidbody;
 
@@ -22,16 +22,20 @@ public class PlayerCtrl : MonoBehaviour
     private float applySpeed;
 
     //상태.
-    //private bool isWalk = true;
-
+    private bool isWalk = true;
     private bool isRun = false;
-    private bool isGround = true;
+    //private bool isGround = true;
 
     private Vector3 lastPos;
     //땅 착지 여부
     private CapsuleCollider capsuleCollider;
 
     Animator animator;
+
+    [SerializeField]
+    private AttackController theAttackController;
+    private Crosshair thecrosshair; // 조준점.
+
 
     void Start()
     {
@@ -43,7 +47,10 @@ public class PlayerCtrl : MonoBehaviour
         applySpeed = speed;
 
         _camera = Camera.main;
-        
+
+        theAttackController = FindObjectOfType<AttackController>();
+        thecrosshair = FindObjectOfType<Crosshair>(); // 조준점.
+
     }
 
     // Update is called once per frame
@@ -68,28 +75,30 @@ public class PlayerCtrl : MonoBehaviour
         {
             Running();
             animator.SetBool("Run", isRun);
-            
+
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             RunningCancel();
             animator.SetBool("Run", isRun);
-            
+
         }
     }
 
     //달리기
     private void Running()
     {
+        theAttackController.CancelFineSight(); // 정조준시 뛸때 정조준이 해제되게만듦
+
         isRun = true;
-        //thecrosshair.RunningAnimation(isRun);
+        thecrosshair.RunningAnimation(isRun);
         applySpeed = runSpeed;
     }
 
     private void RunningCancel()
     {
         isRun = false;
-        //thecrosshair.RunningAnimation(isRun);
+        thecrosshair.RunningAnimation(isRun);
         applySpeed = speed;
     }
 
@@ -104,36 +113,46 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDirection = forward * _moveDirZ + right * _moveDirX;
 
         _controller.Move(moveDirection.normalized * applySpeed * Time.deltaTime);
+        if (!isRun)
+        {
+            if (_moveDirZ > 0.1f)
+            {
+                animator.SetBool("Up", true);
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                isWalk = true;
+            }
+            else if (_moveDirZ <= -0.1f)
+            {
+                animator.SetBool("Up", true);
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                isWalk = true;
+            }
+            else if (_moveDirX >= 0.1f)
+            {
+                animator.SetBool("Up", false);
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", true);
+                isWalk = true;
+            }
+            else if (_moveDirX <= -0.1f)
+            {
+                animator.SetBool("Up", false);
+                animator.SetBool("Left", true);
+                animator.SetBool("Right", false);
+                isWalk = true;
+            }
+            else
+            {
+                animator.SetBool("Up", false);
+                animator.SetBool("Left", false);
+                animator.SetBool("Right", false);
+                isWalk = false;
+            }
+            thecrosshair.WalkingAnimation(isWalk);
+        }
 
-        if(_moveDirZ > 0.1f)
-        {
-            animator.SetBool("Up", true);
-            animator.SetBool("Left", false);
-            animator.SetBool("Right", false);
-        }
-        else if(_moveDirZ <= -0.1f)
-        {
-            animator.SetBool("Up", true);
-            animator.SetBool("Left", false);
-            animator.SetBool("Right", false);
-        } else if(_moveDirX >= 0.1f)
-        {
-            animator.SetBool("Up", false);
-            animator.SetBool("Left", false);
-            animator.SetBool("Right", true);
-        } else if(_moveDirX <= -0.1f)
-        {
-            animator.SetBool("Up", false);
-            animator.SetBool("Left", true);
-            animator.SetBool("Right", false);
-        }
-        else
-        {
-            animator.SetBool("Up", false);
-            animator.SetBool("Left", false);
-            animator.SetBool("Right", false);
-        }
-        
 
         //Vector3 _moveHorizontal = transform.right * _moveDirX;
         //Vector3 _moveVertical = transform.forward * _moveDirZ;
