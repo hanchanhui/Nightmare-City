@@ -5,10 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - MachineGun
-  - Itme
   - Enemy
   - Key
   - Portal
+  - Item
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - WhatIsGround
   - WhatIsPlayer
   - Camera
-  - 
+  - Item
   - 
   - 
   - 

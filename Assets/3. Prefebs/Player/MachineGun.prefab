@@ -4937,7 +4937,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5502119
+  m_Radius: 1.7
   m_Center: {x: 0, y: -0.09303618, z: 0.07795411}
 --- !u!114 &1245614844
 MonoBehaviour:
@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  value: 0
+  value: 1
   RotSpeed: 30
 --- !u!1001 &7641387911832286404
 PrefabInstance:
@@ -4991,15 +4991,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4790501029486808, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.72712
+      value: 49.591488
       objectReference: {fileID: 0}
     - target: {fileID: 4790501029486808, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: -0.67
       objectReference: {fileID: 0}
     - target: {fileID: 4790501029486808, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.77
+      value: 29.12
       objectReference: {fileID: 0}
     - target: {fileID: 4790501029486808, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_LocalRotation.w
