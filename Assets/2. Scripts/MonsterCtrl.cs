@@ -41,6 +41,10 @@ public class MonsterCtrl : MonoBehaviour
     public bool Monster = false;
     public bool Boss = false;
 
+    // Effect
+    public GameObject bloodEffect;
+    public GameObject bloodDecal;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -202,7 +206,6 @@ public class MonsterCtrl : MonoBehaviour
             //Attack code here
             //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
-
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -287,6 +290,30 @@ public class MonsterCtrl : MonoBehaviour
                 break;
         }
     }
+
+    private void OnCollisionEnter(Collision coll)
+    {
+        if(coll.gameObject.tag == "Bullet")
+        {
+            CreateBloodEffect(coll.transform.position);
+        }
+    }
+
+    void CreateBloodEffect(Vector3 pos)
+    {
+        // Ç÷Èç »ý¼º
+        GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
+        Destroy(blood1, 2.0f);
+
+        Vector3 decalPos = transform.position + (Vector3.up * 0.05f);
+        Quaternion decalRot = Quaternion.Euler(90, 0, Random.Range(0, 360));
+        GameObject blood2 = (GameObject)Instantiate(bloodDecal, decalPos, decalRot);
+        float scale = Random.Range(1.5f, 3.5f);
+        blood2.transform.localScale = Vector3.one * scale;
+
+        Destroy(blood2, 5.0f);
+    }
+
     // Player Check Range 
     private void OnDrawGizmosSelected()
     {
