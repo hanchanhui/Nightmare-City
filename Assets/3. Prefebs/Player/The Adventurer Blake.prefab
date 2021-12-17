@@ -1990,7 +1990,9 @@ GameObject:
   - component: {fileID: 5120368860624390268}
   - component: {fileID: 8483129079144242538}
   - component: {fileID: 6104987134562415312}
-  m_Layer: 0
+  - component: {fileID: 5735243927649176841}
+  - component: {fileID: 5196049841695781800}
+  m_Layer: 9
   m_Name: The Adventurer Blake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2050,11 +2052,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &8483129079144242538
 MonoBehaviour:
@@ -2069,8 +2071,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothness: 10
-  speed: 1000
-  runSpeed: 200
+  speed: 10
+  runSpeed: 20
+  theAttackController: {fileID: 0}
 --- !u!143 &6104987134562415312
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2089,6 +2092,48 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5735243927649176841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961515752575711136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033e4a8339edd3540bf033d2e30e5e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunName: BasicGun
+  range: 100
+  accuracy: 0.04
+  fireRate: 0.2
+  reloadTime: 2
+  damege: 30
+  reloadBulletCount: 30
+  currentBulletCount: 30
+  maxBulletCount: 0
+  carryBulletCount: 150
+  retroActionForce: 0
+  retroActionFineSightForce: 0
+  fineSightOriginPos: {x: 0, y: 0, z: 0}
+  anim: {fileID: 2020852152582662345}
+  fire_Sound: {fileID: 8300000, guid: 43360a7750406dc4582d6cf8ee8eb3f9, type: 3}
+--- !u!114 &5196049841695781800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4961515752575711136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d023a1f5039838c4aa20d7a1da21dc45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentGun: {fileID: 5735243927649176841}
+  theCam: {fileID: 0}
+  damage: 30
 --- !u!1 &4994722021707466521
 GameObject:
   m_ObjectHideFlags: 0

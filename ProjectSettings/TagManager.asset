@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - MachineGun
-  - Itme
+  - Enemy
   layers:
   - Default
   - TransparentFX
