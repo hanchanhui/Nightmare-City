@@ -12,7 +12,7 @@ public class PlayerCtrl : MonoBehaviour
 
     public float smoothness = 10f;
 
-    
+
     //------------------------------------------------
     //private Rigidbody playerRigidbody;
 
@@ -33,6 +33,9 @@ public class PlayerCtrl : MonoBehaviour
 
     Animator animator;
 
+    [SerializeField]
+    private AttackController theAttackController; // 어택컨트롤러.
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -43,7 +46,9 @@ public class PlayerCtrl : MonoBehaviour
         applySpeed = speed;
 
         _camera = Camera.main;
-        
+
+        theAttackController = FindObjectOfType<AttackController>();
+
     }
 
     // Update is called once per frame
@@ -68,19 +73,21 @@ public class PlayerCtrl : MonoBehaviour
         {
             Running();
             animator.SetBool("Run", isRun);
-            
+
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             RunningCancel();
             animator.SetBool("Run", isRun);
-            
+
         }
     }
 
     //달리기
     private void Running()
     {
+        theAttackController.CancelFineSight(); // 정조준시 뛸때 정조준이 해제되게만듦
+
         isRun = true;
         //thecrosshair.RunningAnimation(isRun);
         applySpeed = runSpeed;
@@ -105,23 +112,25 @@ public class PlayerCtrl : MonoBehaviour
 
         _controller.Move(moveDirection.normalized * applySpeed * Time.deltaTime);
 
-        if(_moveDirZ > 0.1f)
+        if (_moveDirZ > 0.1f)
         {
             animator.SetBool("Up", true);
             animator.SetBool("Left", false);
             animator.SetBool("Right", false);
         }
-        else if(_moveDirZ <= -0.1f)
+        else if (_moveDirZ <= -0.1f)
         {
             animator.SetBool("Up", true);
             animator.SetBool("Left", false);
             animator.SetBool("Right", false);
-        } else if(_moveDirX >= 0.1f)
+        }
+        else if (_moveDirX >= 0.1f)
         {
             animator.SetBool("Up", false);
             animator.SetBool("Left", false);
             animator.SetBool("Right", true);
-        } else if(_moveDirX <= -0.1f)
+        }
+        else if (_moveDirX <= -0.1f)
         {
             animator.SetBool("Up", false);
             animator.SetBool("Left", true);
@@ -133,7 +142,7 @@ public class PlayerCtrl : MonoBehaviour
             animator.SetBool("Left", false);
             animator.SetBool("Right", false);
         }
-        
+
 
         //Vector3 _moveHorizontal = transform.right * _moveDirX;
         //Vector3 _moveVertical = transform.forward * _moveDirZ;
