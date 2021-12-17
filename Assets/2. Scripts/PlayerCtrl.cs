@@ -15,7 +15,7 @@ public class PlayerCtrl : MonoBehaviour
 
     //------------------------------------------------
     //private Rigidbody playerRigidbody;
-
+    private float stop = 0f;
     public float speed = 10f;
     [SerializeField]
     private float runSpeed;
@@ -50,6 +50,8 @@ public class PlayerCtrl : MonoBehaviour
 
         theAttackController = FindObjectOfType<AttackController>();
         thecrosshair = FindObjectOfType<Crosshair>(); // Á¶ÁØÁ¡.
+
+
 
     }
 
@@ -113,98 +115,56 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 moveDirection = forward * _moveDirZ + right * _moveDirX;
 
         _controller.Move(moveDirection.normalized * applySpeed * Time.deltaTime);
+
         if (!isRun)
         {
-            if (_moveDirZ > 0.1f)
+            if (theAttackController.isfineSightMode)
             {
-                animator.SetBool("Up", true);
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                isWalk = true;
-            }
-            else if (_moveDirZ <= -0.1f)
-            {
-                animator.SetBool("Up", true);
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                isWalk = true;
-            }
-            else if (_moveDirX >= 0.1f)
-            {
-                animator.SetBool("Up", false);
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", true);
-                isWalk = true;
-            }
-            else if (_moveDirX <= -0.1f)
-            {
-                animator.SetBool("Up", false);
-                animator.SetBool("Left", true);
-                animator.SetBool("Right", false);
-                isWalk = true;
+                applySpeed = stop;
             }
             else
             {
-                animator.SetBool("Up", false);
-                animator.SetBool("Left", false);
-                animator.SetBool("Right", false);
-                isWalk = false;
+                applySpeed = speed;
+                if (_moveDirZ > 0.1f)
+                {
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    isWalk = true;
+                }
+                else if (_moveDirZ <= -0.1f)
+                {
+                    animator.SetBool("Up", true);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    isWalk = true;
+                }
+                else if (_moveDirX >= 0.1f)
+                {
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", true);
+                    isWalk = true;
+                }
+                else if (_moveDirX <= -0.1f)
+                {
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Left", true);
+                    animator.SetBool("Right", false);
+                    isWalk = true;
+                }
+                else
+                {
+                    animator.SetBool("Up", false);
+                    animator.SetBool("Left", false);
+                    animator.SetBool("Right", false);
+                    isWalk = false;
+                }
+                thecrosshair.WalkingAnimation(isWalk);
             }
-            thecrosshair.WalkingAnimation(isWalk);
         }
 
 
-        //Vector3 _moveHorizontal = transform.right * _moveDirX;
-        //Vector3 _moveVertical = transform.forward * _moveDirZ;
-
-        //Vector3 _velocity = (_moveHorizontal + _moveVertical).normalized * applySpeed;
-
-        //playerRigidbody.MovePosition(moveDirection.normalized + moveDirection * Time.deltaTime);
-
-
     }
-
-    //private void MoveCheck()
-    //{
-    //    if (!isRun && isGround)
-    //    {
-    //        if (Vector3.Distance(lastPos, transform.position) >= 0.01f)
-    //        {
-    //            Debug.Log(Vector3.Distance(lastPos, transform.position));
-    //            animator.SetBool("Up", true);
-    //            //isWalk = true;
-    //        }
-    //        else
-    //        {
-    //            animator.SetBool("Up", false);
-    //            //isWalk = false;
-    //        }
-    //        //thecrosshair.WalkingAnimation(isWalk);
-    //        lastPos = transform.position;
-    //    }
-    //}
-
-    //void InputMovement()
-    //{
-
-    //    float _dirX = Input.GetAxisRaw("Horizontal");
-    //    float _dirZ = Input.GetAxisRaw("Vertical");
-
-    //    Vector3 direction = new Vector3(_dirX, 0f, _dirZ);
-    //    isMove = false;
-    //    Debug.Log(direction.y);
-
-
-    //    if (direction != Vector3.zero)
-    //    {
-    //        isMove = true;
-    //        this.transform.Translate(direction.normalized * speed * Time.deltaTime);
-    //    }
-
-    //    anim.SetBool("Move", isMove);
-    //    anim.SetFloat("DirX", direction.x);
-    //    anim.SetFloat("DirZ", direction.z);
-    //}
-
 
 }
