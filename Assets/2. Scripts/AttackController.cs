@@ -23,6 +23,7 @@ public class AttackController : MonoBehaviour
 
     public int damage = 30;
 
+
     void Start()
     {
         themonsterCtrl = GetComponent<MonsterCtrl>();
@@ -89,7 +90,7 @@ public class AttackController : MonoBehaviour
                         0)
             , out hitInfo, currentGun.range))
         {
-            if (hitInfo.transform.tag == "BulletSpawner")
+            if (hitInfo.transform.tag == "Enemy")
             {
                 hitInfo.transform.GetComponent<MonsterCtrl>().TakeDamage(damage);
                 //Debug.Log(hitInfo.transform.name);
@@ -173,5 +174,27 @@ public class AttackController : MonoBehaviour
     public Attack GetAttack()
     {
         return currentGun;
+    }
+
+    // 찬희 추가
+    // 탄창을 먹으면 총알 추가 및 탄창 삭제
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Item")
+        {
+            Item item = other.GetComponent<Item>();
+            switch (item.type)
+            {
+                case Item.Type.Bullet:
+                    currentGun.currentBulletCount += item.value; // 총알 추가
+                    if (currentGun.currentBulletCount > currentGun.maxBulletCount) // 총알이 Max를 넘으면 넘어가지 않게 조건 
+                    {
+                        currentGun.currentBulletCount = currentGun.maxBulletCount;
+                    }
+                    break;
+            }
+
+            Destroy(other.gameObject); // 삭제
+        }
     }
 }

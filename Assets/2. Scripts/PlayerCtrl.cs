@@ -36,6 +36,14 @@ public class PlayerCtrl : MonoBehaviour
     private AttackController theAttackController;
     private Crosshair thecrosshair; // 조준점.
 
+    //------------------------------------------------찬희 12.18일
+    GameObject nearObject; // 아이템 저장
+    GameObject equipGun; // 지금 장착된 무기 저장 변수
+    public GameObject[] Gun; // 먹은 아이템을 저장
+    public bool[] hasGun; // 먹은 아이템 참/불
+    
+    
+    
 
     void Start()
     {
@@ -50,16 +58,15 @@ public class PlayerCtrl : MonoBehaviour
 
         theAttackController = FindObjectOfType<AttackController>();
         thecrosshair = FindObjectOfType<Crosshair>(); // 조준점.
-
-
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         TryRun();
-        PlayerMove();
+        PlayerMove(); 
+        Swap(); // 무기 교체되는 식
         //MoveCheck();
     }
     private void LateUpdate()
@@ -108,6 +115,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         float _moveDirX = Input.GetAxisRaw("Horizontal");
         float _moveDirZ = Input.GetAxisRaw("Vertical");
+
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -165,6 +173,53 @@ public class PlayerCtrl : MonoBehaviour
         }
 
 
+    }
+
+    // 손에 든 총 바꿔주는 식 (Update()에서 사용)
+    void Swap()
+    {
+        if(hasGun[1])
+        {
+            equipGun.SetActive(false); // 원래 들고있던 총 끄기
+            equipGun = Gun[1]; // 1번 배열 값을 받고
+            Gun[1].SetActive(true); // 먹은 총으로 교체
+        }
+    }
+
+    // Item 스크립트에 값 받아오고 배열에 저장하고 삭제
+    void Interation()
+    {
+        equipGun = Gun[0];
+        
+        if (nearObject != null)
+        {
+            if(nearObject.tag == "MachineGun")
+            {
+                Item item = nearObject.GetComponent<Item>();
+                int GunIndex = item.value; // 몇번째 배열 아이템인지 값 받고
+                hasGun[GunIndex] = true; // 그 몇번째 아이템 먹었다고 확인
+
+                Destroy(nearObject);// 삭제
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "MachineGun")
+        {
+            nearObject = other.gameObject;
+            Interation();
+        }
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "MachineGun")
+        {
+            nearObject = null;
+        }
     }
 
 }
