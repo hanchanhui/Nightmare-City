@@ -14,14 +14,19 @@ public class MonsterCtrl : MonoBehaviour
     private Animator ani;
     private Animator BossAni;
 
+    //HP
     public float health;
-    public bool MonsterDir = false;
 
     // Patroling
     public Vector3 walkPoint;
     public bool walkPointSet = false;
     public float walkPointRange;
-
+    
+    // Move
+    public int MonsterMoveX = 0;
+    public int MonsterMoveZ;
+    private int MoveCheck = 0;
+    public bool MonsterDir = false;
 
     // Attacking
     public float timeBetweenAttacks;
@@ -87,20 +92,17 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+    // Freedom Move
     private void Patroling()
     {
-        if (Monster)
-        {
-            MonsterAni("IsWalkFalse");
-        }
+       
+        MonsterAni("IsWalkFalse");
+        
 
         if (!walkPointSet)
         {
             SearchWalkPoint();
-            if (Monster)
-            {
-                MonsterAni("IsTraceFalse");
-            }
+            MonsterAni("IsTraceFalse"); 
         }
 
         if(walkPointSet)
@@ -115,27 +117,40 @@ public class MonsterCtrl : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
         {
             walkPointSet = false;
+            if (MoveCheck == 0)
+            {
+                MonsterDir = true;
+                MoveCheck = 1;
+            }
+            else if (MoveCheck == 1)
+            {
+                MonsterDir = false;
+                MoveCheck = 0;
+            }
         }
     }
-
+    // Move X,Z
     private void SearchWalkPoint()
     {
-        float randomZ = 0;
-        float randomX = 0;
+        int MoveX;
+        int MoveZ;
 
         // Calculate random point in range
         if (!MonsterDir)
         {
-            randomZ = Random.Range(-walkPointRange, walkPointRange);
-            MonsterDir = true;
+            MoveX = MonsterMoveX;
+            MoveZ = MonsterMoveZ;
         }
         else
         {
-            randomX = Random.Range(-walkPointRange, walkPointRange);
-            MonsterDir = false;
+            MoveX = -MonsterMoveX;
+            MoveZ = -MonsterMoveZ;
         }
+        
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
+        walkPoint = new Vector3(transform.position.x + MoveX, transform.position.y, transform.position.z + MoveZ);
+
+        
         // 지상에 있는지 확인
         Invoke("WalkPointSetting", 4f);
 
@@ -147,14 +162,11 @@ public class MonsterCtrl : MonoBehaviour
             walkPointSet = true;
         }*/
     }
-
+    // Move On
     private void WalkPointSetting()
     {
-        walkPointSet = true;
-        if (Monster)
-        {
-            MonsterAni("IsTraceTrue");
-        }
+       walkPointSet = true;
+       MonsterAni("IsTraceTrue");  
     }
     
     /*
@@ -171,11 +183,13 @@ public class MonsterCtrl : MonoBehaviour
 
     }*/
 
+    // Player Followed
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
     }
 
+    // Player Attect
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
@@ -186,7 +200,7 @@ public class MonsterCtrl : MonoBehaviour
         if(!alreadyAttacked)
         {
             //Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+            //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 
 
             alreadyAttacked = true;
@@ -194,6 +208,18 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+    public void MonAttack()
+    {
+        //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+        projectile.SetActive(true);
+    }
+
+    public void AttackDestroy()
+    {
+        projectile.SetActive(false);
+    }
+
+    // Attack Cool time
     private void ResetAttack()
     {
         alreadyAttacked = false;
@@ -219,6 +245,7 @@ public class MonsterCtrl : MonoBehaviour
         Destroy(gameObject);
     }
 
+    // Zombi Animation
     private void MonsterAni(string Ani)
     {
         switch (Ani)
@@ -245,7 +272,7 @@ public class MonsterCtrl : MonoBehaviour
                 break;
         }
     }
-
+    // Boss Animation
     private void BossAnimator(string Ani)
     {
         switch (Ani)
@@ -260,7 +287,7 @@ public class MonsterCtrl : MonoBehaviour
                 break;
         }
     }
-
+    // Player Check Range 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
