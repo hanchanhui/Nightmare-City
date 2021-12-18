@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class PlayerCtrl : MonoBehaviour
     //public bool run;
 
     public float smoothness = 10f;
-
 
     //------------------------------------------------
     //private Rigidbody playerRigidbody;
@@ -45,6 +45,10 @@ public class PlayerCtrl : MonoBehaviour
     //-----------------------------------------------주형 플레이어 채력
     public int hp = 150;
 
+    // ======================================================준하
+    public UI_HpBar hpBar;
+    Rigidbody rigid;
+    public bool isDie = true;
 
     void Start()
     {
@@ -59,7 +63,8 @@ public class PlayerCtrl : MonoBehaviour
 
         theAttackController = FindObjectOfType<AttackController>();
         thecrosshair = FindObjectOfType<Crosshair>(); // 조준점.
-        
+
+        rigid = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -69,6 +74,11 @@ public class PlayerCtrl : MonoBehaviour
         PlayerMove(); 
         Swap(); // 무기 교체되는 식
         //MoveCheck();
+
+        if(hp <= 0)
+        {
+            applySpeed = stop;
+        }
     }
     private void LateUpdate()
     {
@@ -81,13 +91,13 @@ public class PlayerCtrl : MonoBehaviour
     //달리기를 하는지, 취소하는지 결정
     private void TryRun()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !isDie)
         {
             Running();
             animator.SetBool("Run", isRun);
 
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isDie)
         {
             RunningCancel();
             animator.SetBool("Run", isRun);
@@ -187,6 +197,8 @@ public class PlayerCtrl : MonoBehaviour
     }
 
     // Item 스크립트에 값 받아오고 배열에 저장하고 삭제
+    public GameObject weaponImg1;
+    public GameObject weaponImg2;
     void Interation()
     {
         equipGun = Gun[0];
@@ -198,6 +210,9 @@ public class PlayerCtrl : MonoBehaviour
                 Item item = nearObject.GetComponent<Item>();
                 int GunIndex = item.value; // 몇번째 배열 아이템인지 값 받고
                 hasGun[GunIndex] = true; // 그 몇번째 아이템 먹었다고 확인
+
+                weaponImg1.SetActive(false);
+                weaponImg2.SetActive(true);
 
                 Destroy(nearObject);// 삭제
             }
@@ -213,7 +228,6 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "MachineGun")
@@ -222,15 +236,26 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+    public UI_Died uiDied;
+    public GameObject dieCamera;
     public void GetDamage(int damage) // 플레이어 죽음.
     {
         hp -= damage;
-        //hpbar.SetHP(hp);
+        hpBar.SetHP(hp);
         if (hp <= 0)
         {
-            //Die();
-            Debug.Log("나 죽음");
+            animator.SetTrigger("Die");
+            dieCamera.GetComponent<CameraMove>().enabled = false; // 죽었을 때 카메라 움직이지 않게 하려고 이름 저따구임
+            //rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            isDie = true;
+            StartCoroutine(diePlayer());
+            uiDied.playerDie();
         }
     }
 
+    public IEnumerator diePlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        animator.enabled = false;
+    }
 }
