@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 2037547067415959776}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2670,18 +2670,21 @@ MonoBehaviour:
   gunName: BasicGun
   range: 100
   accuracy: 0.04
-  fireRate: 0.2
+  fireRate: 0.5
+  fireRate2: 0.1
   reloadTime: 2
   damege: 30
   reloadBulletCount: 30
   currentBulletCount: 30
   maxBulletCount: 30
   carryBulletCount: 0
+  carryBulletCount2: 9999
   retroActionForce: 0
   retroActionFineSightForce: 0
   fineSightOriginPos: {x: 0, y: 0, z: 0}
   anim: {fileID: 644686314819860313}
   fire_Sound: {fileID: 8300000, guid: 43360a7750406dc4582d6cf8ee8eb3f9, type: 3}
+  NONfire_Sound: {fileID: 8300000, guid: a47372f4754968f46ae77e46540640ed, type: 3}
 --- !u!114 &6694023979660815416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,7 +2817,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a47372f4754968f46ae77e46540640ed, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

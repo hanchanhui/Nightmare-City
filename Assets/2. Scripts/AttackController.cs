@@ -44,6 +44,7 @@ public class AttackController : MonoBehaviour
         TryFire();
         TryReload();
         TryFineSight();
+        MachineGuncarry();
     }
 
     private void GunFireRateCalc() // 연사속도 가 0이여야 발사를 할 수 있음
@@ -83,10 +84,31 @@ public class AttackController : MonoBehaviour
     {
         //thecrosshair.FireAnimation();
         currentGun.currentBulletCount--;
-        currentFireRate = currentGun.fireRate; //연사속도 재계산(다시 설정해준 0.2로 돌아감)
+
+        PlayerCtrl player = GetComponent<PlayerCtrl>();
+        if(player.hasGun[1])
+        {
+            currentFireRate = currentGun.fireRate2; //우지 연사속도 재계산(다시 설정해준 0.1로 돌아감)
+            
+        }
+        else
+        {
+            currentFireRate = currentGun.fireRate; //연사속도 재계산(다시 설정해준 0.5로 돌아감)
+        }
+
         currentGun.anim.SetTrigger("Fire"); // 반동 애니메이션. 여기에 반동 애니메이션 추가.
         PlaySE(currentGun.fire_Sound); // 총알발사 사운드
         Hit();
+    }
+
+    
+    private void MachineGuncarry()
+    {
+        PlayerCtrl player = GetComponent<PlayerCtrl>();
+        if (player.hasGun[1])
+        {
+            currentGun.carryBulletCount = currentGun.carryBulletCount2; // 우지 탄창 9999 설정
+        }
     }
 
     private void Hit()
@@ -101,6 +123,7 @@ public class AttackController : MonoBehaviour
             if (hitInfo.transform.tag == "Enemy")
             {
                 hitInfo.transform.GetComponent<MonsterCtrl>().TakeDamage(damage);
+                hitInfo.transform.GetComponent<MonsterCtrl>().CreateBloodEffect();
                 Debug.Log(hitInfo.transform.name);
             }
 
@@ -224,11 +247,7 @@ public class AttackController : MonoBehaviour
             switch (item.type)
             {
                 case Item.Type.Bullet:
-                    currentGun.currentBulletCount += item.value; // 총알 추가
-                    if (currentGun.currentBulletCount > currentGun.maxBulletCount) // 총알이 Max를 넘으면 넘어가지 않게 조건 
-                    {
-                        currentGun.currentBulletCount = currentGun.maxBulletCount;
-                    }
+                    currentGun.carryBulletCount += item.value; // 총알 추가 
                     break;
             }
 

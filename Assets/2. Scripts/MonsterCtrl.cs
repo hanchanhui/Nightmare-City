@@ -45,7 +45,8 @@ public class MonsterCtrl : MonoBehaviour
 
     // Effect
     public GameObject bloodEffect;
-    public GameObject bloodDecal;
+
+    
 
     private void Awake()
     {
@@ -80,10 +81,11 @@ public class MonsterCtrl : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
-            MonsterMoveCheck = true;
-            sightRange = sightRangecharge;
+            
             if (Monster)
             {
+                MonsterMoveCheck = true;
+                sightRange = sightRangecharge;
                 MonsterAni("IsWalkTrue");
             }
         }
@@ -300,27 +302,14 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision coll)
-    {
-        if(coll.gameObject.tag == "Bullet")
-        {
-            CreateBloodEffect(coll.transform.position);
-        }
-    }
 
-    void CreateBloodEffect(Vector3 pos)
+    public void CreateBloodEffect()
     {
         // Ç÷Èç »ý¼º
+        Vector3 pos = transform.position + transform.up * 5f;
         GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
-        Destroy(blood1, 2.0f);
+        Destroy(blood1, 1.0f);
 
-        Vector3 decalPos = transform.position + (Vector3.up * 0.05f);
-        Quaternion decalRot = Quaternion.Euler(90, 0, Random.Range(0, 360));
-        GameObject blood2 = (GameObject)Instantiate(bloodDecal, decalPos, decalRot);
-        float scale = Random.Range(1.5f, 3.5f);
-        blood2.transform.localScale = Vector3.one * scale;
-
-        Destroy(blood2, 5.0f);
     }
 
     // Player Check Range 
