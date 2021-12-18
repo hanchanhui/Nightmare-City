@@ -13,6 +13,7 @@ public class MonsterCtrl : MonoBehaviour
 
     private Animator ani;
     private Animator BossAni;
+    private AudioSource audioSource;
 
     //HP
     public float health;
@@ -46,12 +47,25 @@ public class MonsterCtrl : MonoBehaviour
     // Effect
     public GameObject bloodEffect;
 
-    
+    // Die Check
+    public bool MonsterDie = false;
+
+    // Sound
+    public AudioClip MonsterIdle;
+    public AudioClip MonsterWalk;
+    public AudioClip MonsterDied;
+    public AudioClip BossWav;
+    public AudioClip BossDie;
+    public bool ZonbieSounds = true;
+    public bool BossSounds = true;
+
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        audioSource = GetComponent<AudioSource>();
+
         if (Monster)
         {
             ani = GetComponent<Animator>();
@@ -74,10 +88,15 @@ public class MonsterCtrl : MonoBehaviour
             {
                 Patroling();
                 MonsterMoveCheck = false;
-                //RecognitionPlayer();
-                //ani.SetBool("IsWalk", false);
+            }
+            if (ZonbieSounds)
+            {
+                MonsterSound("Idle");
+                Debug.Log("ZonBie사운드");
+                ZonbieSounds = false;
             }
         }
+
         if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
@@ -88,7 +107,17 @@ public class MonsterCtrl : MonoBehaviour
                 sightRange = sightRangecharge;
                 MonsterAni("IsWalkTrue");
             }
+            if(Boss)
+            {
+                if (BossSounds)
+                {
+                    BossSound("Wav");
+                    Debug.Log("Boss사운드");
+                    BossSounds = false;
+                }
+            }
         }
+
         if (playerInAttackRange && playerInSightRange)
         {
             AttackPlayer();
@@ -119,7 +148,7 @@ public class MonsterCtrl : MonoBehaviour
         if(walkPointSet)
         {
             agent.SetDestination(walkPoint);
-            
+            //MonsterSound("Walk");
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -165,14 +194,7 @@ public class MonsterCtrl : MonoBehaviour
         
         // 지상에 있는지 확인
         Invoke("WalkPointSetting", 4f);
-
-        /*
-        Debug.DrawRay(transform.position, -transform.up, Color.blue, 2f);
-        if (Physics.Raycast(walkPoint, -transform.up, 10f, whatIsGround))
-        {
-            Debug.Log("check");
-            walkPointSet = true;
-        }*/
+  
     }
     // Move On
     private void WalkPointSetting()
@@ -184,24 +206,15 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
     
-    /*
-    private void RecognitionPlayer()
-    {
-
-        Vector3 pos = transform.position + Vector3.forward * 20f;
-        if (Physics.CheckSphere(pos, eyeContactRange, whatIsPlayer))
-        {
-            Debug.Log("check");
-            ani.SetBool("IsWalk", true);
-            ChasePlayer();
-        }
-
-    }*/
 
     // Player Followed
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        if (!MonsterDie)
+        {
+            agent.SetDestination(player.position);
+            MonsterSound("Walk");
+        }
     }
 
     // Player Attect
@@ -214,9 +227,6 @@ public class MonsterCtrl : MonoBehaviour
 
         if(!alreadyAttacked)
         {
-            //Attack code here
-            //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
@@ -224,7 +234,6 @@ public class MonsterCtrl : MonoBehaviour
 
     public void MonAttack()
     {
-        //Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
         projectile.SetActive(true);
     }
 
@@ -251,7 +260,31 @@ public class MonsterCtrl : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0) Invoke(nameof(DestroyEnemy), 0.5f);
+        if (health <= 0)
+        {
+            if (Monster)
+            {
+                MonsterAni("IsDeadTrue");
+                MonsterDie = true;
+                ZonbieSounds = true;
+                if (ZonbieSounds)
+                {
+                    MonsterSound("Die");
+                    ZonbieSounds = false;
+                }
+            }
+            if (Boss)
+            {
+                BossAnimator("IsDeadTrue");
+                BossSounds = true;
+                if (BossSounds)
+                {
+                    BossSound("Die");
+                    BossSounds = false;
+                }
+            }
+            Invoke(nameof(DestroyEnemy), 3f);
+        }
     }
 
     private void DestroyEnemy()
@@ -282,6 +315,9 @@ public class MonsterCtrl : MonoBehaviour
             case "IsAttackFalse":
                 ani.SetBool("IsAttack", false);
                 break;
+            case "IsDeadTrue":
+                ani.SetTrigger("IsDead");
+                break;
             default:
                 break;
         }
@@ -297,6 +333,9 @@ public class MonsterCtrl : MonoBehaviour
             case "IsAttackFalse":
                 BossAni.SetBool("IsAttack", false);
                 break;
+            case "IsDeadTrue":
+                BossAni.SetTrigger("IsDead");
+                break;
             default:
                 break;
         }
@@ -306,10 +345,55 @@ public class MonsterCtrl : MonoBehaviour
     public void CreateBloodEffect()
     {
         // 혈흔 생성
-        Vector3 pos = transform.position + transform.up * 5f;
-        GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
-        Destroy(blood1, 1.0f);
+        if (Monster)
+        {
+            Vector3 pos = transform.position + transform.up * 5f;
+            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
+            Destroy(blood1, 1.0f);
+        }else if(Boss)
+        {
+            Vector3 pos = transform.position + transform.up * 7f;
+            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
+            Destroy(blood1, 1.0f);
+        }
 
+    }
+
+    private void MonsterSound(string action)
+    {
+        switch(action)
+        {
+            case "Idle":
+                audioSource.clip = MonsterIdle;
+                break;
+            case "Walk":
+                audioSource.clip = MonsterWalk;
+                break;
+            case "Die":
+                audioSource.clip = MonsterDied;
+                break;
+            default:
+                Debug.Log("ERROR : 해당 사운드 값 없음");
+                break;
+        }
+        audioSource.Play();
+    }
+
+    private void BossSound(string action)
+    {
+        switch (action)
+        {
+            case "Wav":
+                audioSource.clip = BossWav;
+                break;
+            case "Die":
+                audioSource.clip = BossDie;
+                break;
+            default:
+                Debug.Log("ERROR : 해당 사운드 값 없음");
+                break;
+        }
+        audioSource.Play();
     }
 
     // Player Check Range 
@@ -319,7 +403,5 @@ public class MonsterCtrl : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
-        //Gizmos.color = Color.blue;
-        //Gizmos.DrawWireSphere(transform.position + Vector3.forward * 20f, eyeContactRange);
     }
 }

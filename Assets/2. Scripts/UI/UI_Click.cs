@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 enum BTNType
 {
     Next,
+    Restart,
+    MainMenu,
+    Back,
     Continue_Yes,
     Continue_No
 }
@@ -14,6 +17,10 @@ public class UI_Click : MonoBehaviour
 {
     [Tooltip("각 버튼의 기능 선택")]
     [SerializeField] private BTNType currentType;
+    public UI_test uiTest;
+    public GameObject crossHair;
+    [Tooltip("ESC 누르면 나오는 오브젝트 그룹")]
+    [SerializeField] private CanvasGroup optionGroup;
 
     public void OnBtnClick()
     {
@@ -21,6 +28,19 @@ public class UI_Click : MonoBehaviour
         {
             case BTNType.Next:
                 SceneManager.LoadScene("Play Scene");
+                break;
+            case BTNType.Restart:
+                SceneManager.LoadScene("Play Scene");
+                break;
+            case BTNType.MainMenu:
+                SceneManager.LoadScene("Main Menu");
+                break;
+            case BTNType.Back:
+                uiTest.CanvasGroupOff(optionGroup);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                crossHair.SetActive(true);
+                uiTest.CameraOn();
                 break;
             case BTNType.Continue_Yes:
                 SceneManager.LoadScene("Play Scene");

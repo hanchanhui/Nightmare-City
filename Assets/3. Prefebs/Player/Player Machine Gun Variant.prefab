@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1804455012407484, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_Name
-      value: Player Machine Gun
+      value: Player Machine Gun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1804455012407484, guid: 2cfadb65e0ca65447989e6b647105b53, type: 3}
       propertyPath: m_IsActive

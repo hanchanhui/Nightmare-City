@@ -2637,6 +2637,12 @@ MonoBehaviour:
   - {fileID: 7024985321073566935}
   hasGun: 010000
   hp: 150
+  hpBar: {fileID: 0}
+  isDie: 0
+  weaponImg1: {fileID: 0}
+  weaponImg2: {fileID: 0}
+  uiDied: {fileID: 0}
+  dieCamera: {fileID: 0}
 --- !u!143 &4629882861809134912
 CharacterController:
   m_ObjectHideFlags: 0

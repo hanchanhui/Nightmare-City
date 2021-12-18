@@ -6,12 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UI_Died : MonoBehaviour
 {
-    void Update()
+    public void playerDie()
     {
-        if (Input.GetKeyDown("1"))
-        {
-            StartCoroutine(Die());
-        }
+        StartCoroutine(Die());
     }
 
     [Tooltip("Fade 오브젝트 받아오기")]
@@ -19,31 +16,14 @@ public class UI_Died : MonoBehaviour
     public IEnumerator Die()
     {
         StartCoroutine(onText());
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         Fade.FadeIn();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Die Scene");
     }
 
     float time = 0f;
     float F_time = 1f;
-    /*
-    [Tooltip("FadeIn 이미지 오브젝트")]
-    [SerializeField] private Image Image;
-    public IEnumerator onImage()
-    {
-        Image.gameObject.SetActive(true);
-        Color alpha = Image.color;
-        while (alpha.a < 1f)
-        {
-            time += Time.deltaTime / F_time;
-            alpha.a = Mathf.Lerp(0, 1, time);
-            Image.color = alpha;
-            yield return null;
-        }
-        yield return null;
-    }
-    */
 
     [Tooltip("you died 텍스트 오브젝트")]
     [SerializeField] private Text text;
