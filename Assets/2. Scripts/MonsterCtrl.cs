@@ -263,11 +263,13 @@ public class MonsterCtrl : MonoBehaviour
 
         if (health <= 0)
         {
+            MonsterDieCheck = true;
             if (Monster)
             {
                 MonsterAni("IsDeadTrue");
                 MonsterDie = true;
                 ZonbieSounds = true;
+                gameObject.tag = "DieEnemy";
                 if (ZonbieSounds)
                 {
                     MonsterSound("Die");
@@ -278,6 +280,7 @@ public class MonsterCtrl : MonoBehaviour
             {
                 BossAnimator("IsDeadTrue");
                 BossSounds = true;
+                gameObject.tag = "DieEnemy";
                 if (BossSounds)
                 {
                     BossSound("Die");
