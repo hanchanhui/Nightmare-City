@@ -915,7 +915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
-      value: Zombi
+      value: Zombie
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: player
