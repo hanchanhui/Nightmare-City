@@ -93,7 +93,7 @@ public class AttackController : MonoBehaviour
             if (hitInfo.transform.tag == "Enemy")
             {
                 hitInfo.transform.GetComponent<MonsterCtrl>().TakeDamage(damage);
-                //Debug.Log(hitInfo.transform.name);
+                Debug.Log(hitInfo.transform.name);
             }
 
         }

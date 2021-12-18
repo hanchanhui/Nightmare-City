@@ -41,9 +41,10 @@ public class PlayerCtrl : MonoBehaviour
     GameObject equipGun; // 지금 장착된 무기 저장 변수
     public GameObject[] Gun; // 먹은 아이템을 저장
     public bool[] hasGun; // 먹은 아이템 참/불
-    
-    
-    
+
+    //-----------------------------------------------주형 플레이어 채력
+    public int hp = 150;
+
 
     void Start()
     {
@@ -219,6 +220,17 @@ public class PlayerCtrl : MonoBehaviour
         if (other.tag == "MachineGun")
         {
             nearObject = null;
+        }
+    }
+
+    public void GetDamage(int damage)
+    {
+        hp -= damage;
+        //hpbar.SetHP(hp);
+        if (hp <= 0)
+        {
+            //Die();
+            Debug.Log("나 죽음");
         }
     }
 
