@@ -144,6 +144,7 @@ public class AttackController : MonoBehaviour
     // 정조준 시도
     private void TryFineSight()
     {
+
         if (Input.GetButtonDown("Fire2") && !isReload)
         {
             FineSight();
