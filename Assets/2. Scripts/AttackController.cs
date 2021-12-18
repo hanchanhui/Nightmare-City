@@ -24,6 +24,12 @@ public class AttackController : MonoBehaviour
     public int damage = 30;
 
 
+    // 실험적
+    private float clickTime; // 클릭중인 시간.
+    public float minClicTime = 1; // 최소 클릭시간
+    private bool isClick; // 클릭 중인지 판단
+    // 여기까지
+    
     void Start()
     {
         themonsterCtrl = GetComponent<MonsterCtrl>();
@@ -33,6 +39,7 @@ public class AttackController : MonoBehaviour
 
     void Update()
     {
+        ClickTimeer();
         GunFireRateCalc();
         TryFire();
         TryReload();
@@ -109,6 +116,8 @@ public class AttackController : MonoBehaviour
         }
     }
 
+    
+
     IEnumerator ReloadCoroution()
     {
         if (currentGun.carryBulletCount > 0)
@@ -142,12 +151,39 @@ public class AttackController : MonoBehaviour
     }
 
     // 정조준 시도
-    private void TryFineSight()
+    private void TryFineSight() // 오른쪽 마우스를 누를때만 조준이 활성화
     {
-
-        if (Input.GetButtonDown("Fire2") && !isReload)
+        if (Input.GetButtonDown("Fire2"))
         {
-            FineSight();
+            isClick = true;
+            if (clickTime >= minClicTime)
+            {
+                if ( !isReload)
+                {
+                    FineSight();
+                }
+            }
+        }
+        else if(Input.GetButtonUp("Fire2"))
+        {
+            CancelFineSight();
+        }
+        //if (Input.GetButtonDown("Fire2") && !isReload)
+        //{
+        //    FineSight();
+        //}
+        //Input.GetButton("Fire2") &&
+    }
+
+    private void ClickTimeer() // 조준 활성화를 위한 함수.
+    {
+        if (isClick)
+        {
+            clickTime += Time.deltaTime;
+        }
+        else
+        {
+            clickTime = 0;
         }
     }
 
