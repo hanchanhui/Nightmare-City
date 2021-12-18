@@ -694,18 +694,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2037547067415959776, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5774521617047021616, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
-      propertyPath: carryBulletCount
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
-      propertyPath: currentBulletCount
-      value: 30
-      objectReference: {fileID: 0}
+      propertyPath: NONfire_Sound
+      value: 
+      objectReference: {fileID: 8300000, guid: a47372f4754968f46ae77e46540640ed, type: 3}
     - target: {fileID: 6694023979660815416, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: theCam
       value: 

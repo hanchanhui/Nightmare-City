@@ -85,7 +85,7 @@ public class AttackController : MonoBehaviour
         currentGun.currentBulletCount--;
         currentFireRate = currentGun.fireRate; //연사속도 재계산(다시 설정해준 0.2로 돌아감)
         currentGun.anim.SetTrigger("Fire"); // 반동 애니메이션. 여기에 반동 애니메이션 추가.
-        PlaySE(currentGun.fire_Sound);
+        PlaySE(currentGun.fire_Sound); // 총알발사 사운드
         Hit();
     }
 
@@ -146,7 +146,8 @@ public class AttackController : MonoBehaviour
         }
         else
         {
-            Debug.Log("남은탄이 없음");
+            PlaySE(currentGun.NONfire_Sound);
+            //Debug.Log("남은탄이 없음");
         }
     }
 

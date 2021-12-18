@@ -23,6 +23,7 @@ public class Attack : MonoBehaviour
     public Vector3 fineSightOriginPos;
 
     public Animator anim;
-    public AudioClip fire_Sound;
+    public AudioClip fire_Sound; // 총알 발사 사운드
+    public AudioClip NONfire_Sound; // 총알 없을때 사운드
 
 }
