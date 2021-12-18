@@ -172,9 +172,8 @@ public class PlayerCtrl : MonoBehaviour
                 thecrosshair.WalkingAnimation(isWalk);
             }
         }
-
-
     }
+    
 
     // 손에 든 총 바꿔주는 식 (Update()에서 사용)
     void Swap()
@@ -223,7 +222,7 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
-    public void GetDamage(int damage)
+    public void GetDamage(int damage) // 플레이어 죽음.
     {
         hp -= damage;
         //hpbar.SetHP(hp);
