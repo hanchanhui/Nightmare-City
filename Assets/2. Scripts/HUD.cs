@@ -11,11 +11,9 @@ public class HUD : MonoBehaviour
     private AttackController theAttackController;
     private Attack currentGun;
 
-
     //총알 개수 반영
     [SerializeField]
     private Text[] text_Bullet;
-
     
     void Update()
     {
@@ -25,9 +23,8 @@ public class HUD : MonoBehaviour
     private void CheckBullet()
     {
         currentGun = theAttackController.GetAttack();
-        //text_Bullet[0].text = currentGun.carryBulletCount.ToString();
+        text_Bullet[0].text = currentGun.currentBulletCount.ToString();
+        text_Bullet[1].text = currentGun.carryBulletCount.ToString();
         //text_Bullet[1].text = currentGun.reloadBulletCount.ToString();
-        //text_Bullet[2].text = currentGun.currentBulletCount.ToString();
-
     }
 }
