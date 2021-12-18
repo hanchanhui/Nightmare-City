@@ -1771,6 +1771,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: carryBulletCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: currentBulletCount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6694023979660815416, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: theCam
       value: 

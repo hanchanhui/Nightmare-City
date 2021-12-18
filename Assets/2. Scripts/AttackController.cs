@@ -77,7 +77,7 @@ public class AttackController : MonoBehaviour
         //thecrosshair.FireAnimation();
         currentGun.currentBulletCount--;
         currentFireRate = currentGun.fireRate; //연사속도 재계산(다시 설정해준 0.2로 돌아감)
-        // 여기에 반동 애니메이션 추가.
+        currentGun.anim.SetTrigger("Fire"); // 반동 애니메이션. 여기에 반동 애니메이션 추가.
         PlaySE(currentGun.fire_Sound);
         Hit();
     }
@@ -90,6 +90,7 @@ public class AttackController : MonoBehaviour
                         0)
             , out hitInfo, currentGun.range))
         {
+            
             if (hitInfo.transform.tag == "Enemy")
             {
                 hitInfo.transform.GetComponent<MonsterCtrl>().TakeDamage(damage);
@@ -98,10 +99,10 @@ public class AttackController : MonoBehaviour
 
         }
     }
-
+    //  && currentGun.currentBulletCount < currentGun.reloadBulletCount
     private void TryReload()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !isReload && currentGun.currentBulletCount < currentGun.reloadBulletCount)
+        if (Input.GetKeyDown(KeyCode.R) && !isReload)
         {
             CancelFineSight();
             StartCoroutine(ReloadCoroution());
@@ -114,8 +115,8 @@ public class AttackController : MonoBehaviour
         {
             isReload = true;
             currentGun.anim.SetTrigger("Reload");
-
-
+            
+                
             currentGun.carryBulletCount += currentGun.currentBulletCount;
             currentGun.currentBulletCount = 0;
 
