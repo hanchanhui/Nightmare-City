@@ -27,6 +27,7 @@ public class MonsterCtrl : MonoBehaviour
     public int MonsterMoveZ;
     private int MoveCheck = 0;
     public bool MonsterDir = false;
+    public bool MonsterMoveCheck = false;
 
     // Attacking
     public float timeBetweenAttacks;
@@ -36,6 +37,7 @@ public class MonsterCtrl : MonoBehaviour
     // State
     public float sightRange, attackRange; // eyeContactRange
     public bool playerInSightRange, playerInAttackRange;
+    public float sightRangecharge;
 
     // Monster Sortation
     public bool Monster = false;
@@ -70,6 +72,7 @@ public class MonsterCtrl : MonoBehaviour
             if (!playerInSightRange && !playerInAttackRange)
             {
                 Patroling();
+                MonsterMoveCheck = false;
                 //RecognitionPlayer();
                 //ani.SetBool("IsWalk", false);
             }
@@ -77,6 +80,8 @@ public class MonsterCtrl : MonoBehaviour
         if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
+            MonsterMoveCheck = true;
+            sightRange = sightRangecharge;
             if (Monster)
             {
                 MonsterAni("IsWalkTrue");
@@ -112,6 +117,7 @@ public class MonsterCtrl : MonoBehaviour
         if(walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -170,7 +176,10 @@ public class MonsterCtrl : MonoBehaviour
     private void WalkPointSetting()
     {
        walkPointSet = true;
-       MonsterAni("IsTraceTrue");  
+        if(MonsterMoveCheck || MonsterMoveX != 0 || MonsterMoveZ != 0)
+        {
+            MonsterAni("IsTraceTrue");
+        }
     }
     
     /*

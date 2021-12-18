@@ -863,7 +863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7662628781239405625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.6, y: -17.419603, z: 30.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7662628782386179866}
@@ -919,10 +919,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.7
-  m_Height: 3.182087
+  m_Radius: 0.7941251
+  m_Height: 3.3083136
   m_Direction: 1
-  m_Center: {x: 0, y: 1.688731, z: 0}
+  m_Center: {x: -0.0331769, y: 1.7518443, z: 0}
 --- !u!114 &7662628781239405627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,15 +950,17 @@ MonoBehaviour:
   MonsterMoveX: 0
   MonsterMoveZ: 0
   MonsterDir: 0
+  MonsterMoveCheck: 0
   timeBetweenAttacks: 2
   projectile: {fileID: 7662628781954472839}
   sightRange: 20
-  attackRange: 3
+  attackRange: 5
   playerInSightRange: 0
   playerInAttackRange: 0
+  sightRangecharge: 30
   Monster: 1
   Boss: 0
-  bloodEffect: {fileID: 0}
+  bloodEffect: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   bloodDecal: {fileID: 0}
 --- !u!195 &7662628781239405624
 NavMeshAgent:
