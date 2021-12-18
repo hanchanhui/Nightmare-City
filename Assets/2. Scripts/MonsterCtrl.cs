@@ -283,7 +283,7 @@ public class MonsterCtrl : MonoBehaviour
                     BossSounds = false;
                 }
             }
-            Invoke(nameof(DestroyEnemy), 3f);
+            Invoke(nameof(DestroyEnemy), 0.7f);
         }
     }
 
