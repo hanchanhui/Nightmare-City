@@ -27,10 +27,10 @@ public class UI_Click : MonoBehaviour
         switch (currentType)
         {
             case BTNType.Next:
-                SceneManager.LoadScene("Play Scene");
+                SceneManager.LoadScene("1stage");
                 break;
             case BTNType.Restart:
-                SceneManager.LoadScene("Play Scene");
+                SceneManager.LoadScene("1stage");
                 break;
             case BTNType.MainMenu:
                 SceneManager.LoadScene("Main Menu");
