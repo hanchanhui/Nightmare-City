@@ -210,8 +210,11 @@ public class MonsterCtrl : MonoBehaviour
     // Player Followed
     private void ChasePlayer()
     {
-        agent.SetDestination(player.position);
-        MonsterSound("Walk");
+        if (!MonsterDie)
+        {
+            agent.SetDestination(player.position);
+            MonsterSound("Walk");
+        }
     }
 
     // Player Attect
@@ -262,6 +265,7 @@ public class MonsterCtrl : MonoBehaviour
             if (Monster)
             {
                 MonsterAni("IsDeadTrue");
+                MonsterDie = true;
                 ZonbieSounds = true;
                 if (ZonbieSounds)
                 {
