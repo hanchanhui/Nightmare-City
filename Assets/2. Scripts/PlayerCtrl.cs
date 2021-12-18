@@ -45,6 +45,14 @@ public class PlayerCtrl : MonoBehaviour
     //-----------------------------------------------주형 플레이어 채력
     public int hp = 150;
 
+    //-------------------------
+    private AudioSource audioSource2;
+    public AudioClip warking;
+    public AudioClip ruuning;
+    public AudioClip emp;
+
+    private bool test = true;
+    private bool test2 = true;
     // ======================================================준하
     public UI_HpBar hpBar;
     Rigidbody rigid;
@@ -65,6 +73,8 @@ public class PlayerCtrl : MonoBehaviour
         thecrosshair = FindObjectOfType<Crosshair>(); // 조준점.
 
         rigid = GetComponent<Rigidbody>();
+
+        audioSource2 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -94,6 +104,11 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && !isDie)
         {
             Running();
+            if (test2)
+            {
+                PlaySE2(ruuning);
+                test2 = false;
+            }
             animator.SetBool("Run", isRun);
 
         }
@@ -101,7 +116,8 @@ public class PlayerCtrl : MonoBehaviour
         {
             RunningCancel();
             animator.SetBool("Run", isRun);
-
+            test2 = true;
+            PlaySE2(emp);
         }
     }
 
@@ -150,27 +166,50 @@ public class PlayerCtrl : MonoBehaviour
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test) 
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirZ <= -0.1f)
                 {
+                    
                     animator.SetBool("Up", true);
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirX >= 0.1f)
                 {
+                    
                     animator.SetBool("Up", false);
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", true);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirX <= -0.1f)
                 {
+                    
                     animator.SetBool("Up", false);
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else
                 {
@@ -178,6 +217,8 @@ public class PlayerCtrl : MonoBehaviour
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = false;
+                    test = true;
+                    PlaySE2(emp);
                 }
                 thecrosshair.WalkingAnimation(isWalk);
             }
@@ -190,6 +231,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if(hasGun[1])
         {
+            equipGun = Gun[0]; // 권총을 꺼줌.
             equipGun.SetActive(false); // 원래 들고있던 총 끄기
             equipGun = Gun[1]; // 1번 배열 값을 받고
             Gun[1].SetActive(true); // 먹은 총으로 교체
@@ -201,7 +243,7 @@ public class PlayerCtrl : MonoBehaviour
     public GameObject weaponImg2;
     void Interation()
     {
-        equipGun = Gun[0];
+        
         
         if (nearObject != null)
         {
@@ -234,6 +276,12 @@ public class PlayerCtrl : MonoBehaviour
         {
             nearObject = null;
         }
+    }
+
+    private void PlaySE2(AudioClip _clip)
+    {
+        audioSource2.clip = _clip;
+        audioSource2.Play();
     }
 
     public UI_Died uiDied;

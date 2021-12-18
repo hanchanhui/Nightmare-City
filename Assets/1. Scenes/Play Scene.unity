@@ -333,6 +333,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4723959124253194428, guid: feaea0b7be2a4914aba96a521b3ff093, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723959124253194428, guid: feaea0b7be2a4914aba96a521b3ff093, type: 3}
       propertyPath: objectTofollow
       value: 
       objectReference: {fileID: 4033876562574563063}
@@ -670,6 +674,22 @@ PrefabInstance:
     - target: {fileID: 5774521617047021616, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: carryBulletCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: reloadBulletCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: currentBulletCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: reloadBulletCount2
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 6694023979660815416, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: theCam
