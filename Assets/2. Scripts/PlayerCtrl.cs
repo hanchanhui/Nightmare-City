@@ -93,7 +93,10 @@ public class PlayerCtrl : MonoBehaviour
             applySpeed = stop;
         }
 
-        calc();
+        if(stageNum != 3)
+        {
+            calc();
+        }
     }
     private void LateUpdate()
     {
@@ -267,9 +270,19 @@ public class PlayerCtrl : MonoBehaviour
                 key++;
                 currentKey.text = key.ToString();
                 Destroy(nearObject);
-                if (key == 2 || key == 5)
+                if(stageNum == 1)
                 {
-                    createPortal();
+                    if(key == 2)
+                    {
+                        createPortal();
+                    }
+                }
+                else if(stageNum == 2)
+                {
+                    if(key == 3)
+                    {
+                        createPortal();
+                    }
                 }
             }
             else if (nearObject.tag == "Portal")
@@ -339,6 +352,18 @@ public class PlayerCtrl : MonoBehaviour
     {
         audioSource2.clip = _clip;
         audioSource2.Play();
+        if(isRun)
+        {
+            audioSource2.loop = true;
+        }
+        else
+            audioSource2.loop = false;
+    }
+
+    private void Playdie(AudioClip _clip)
+    {
+        audioSource2.clip = _clip;
+        audioSource2.PlayOneShot(_clip);
     }
 
     public UI_Died uiDied;
@@ -350,7 +375,7 @@ public class PlayerCtrl : MonoBehaviour
         if (hp <= 0)
         {
             animator.SetTrigger("Die");
-            PlaySE2(AudisDIE);
+            Playdie(AudisDIE);
             dieCamera.GetComponent<CameraMove>().enabled = false; // 죽었을 때 카메라 움직이지 않게 하려고 이름 저따구임
             //rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             isDie = true;

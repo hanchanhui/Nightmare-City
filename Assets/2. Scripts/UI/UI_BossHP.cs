@@ -9,6 +9,6 @@ public class UI_BossHP : MonoBehaviour
 
     public void SetHP(float hp)
     {
-        hpbar.fillAmount = (float)hp / 1000f;
+        hpbar.fillAmount = (float)hp / 3000f;
     }
 }
