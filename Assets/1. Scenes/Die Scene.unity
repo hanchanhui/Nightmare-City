@@ -270,9 +270,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c1c052c0eb27f48baf1014fb3f4cf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentType: 0
-  test: {fileID: 0}
-  gameGroup: {fileID: 0}
+  currentType: 4
+  uiTest: {fileID: 0}
+  crossHair: {fileID: 0}
   optionGroup: {fileID: 0}
 --- !u!95 &625669460
 Animator:
@@ -621,6 +621,7 @@ GameObject:
   - component: {fileID: 1181703730}
   - component: {fileID: 1181703729}
   - component: {fileID: 1181703733}
+  - component: {fileID: 1181703734}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -722,6 +723,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a4c5474a53c697244a529f33cc84688e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1181703734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181703728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d34c2af027a6a4ebd4cd2f79f31bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1381080726
@@ -1034,8 +1047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentType: 2
-  test: {fileID: 0}
-  gameGroup: {fileID: 0}
+  uiTest: {fileID: 0}
+  crossHair: {fileID: 0}
   optionGroup: {fileID: 0}
 --- !u!95 &1739501885
 Animator:

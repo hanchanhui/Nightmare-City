@@ -954,15 +954,16 @@ MonoBehaviour:
   MonsterMoveCheck: 0
   timeBetweenAttacks: 2
   projectile: {fileID: 7662628781954472839}
-  sightRange: 20
+  sightRange: 35
   attackRange: 3
   playerInSightRange: 0
   playerInAttackRange: 0
-  sightRangecharge: 30
+  sightRangecharge: 40
   Monster: 1
   Boss: 0
   bloodEffect: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
   MonsterDie: 0
+  MonsterDieCheck: 0
   MonsterIdle: {fileID: 8300000, guid: 7b7335f5e0f577b4f9bbfa855a9d82be, type: 3}
   MonsterWalk: {fileID: 8300000, guid: 0fa812a1e78cab24db2345f2d7093366, type: 3}
   MonsterDied: {fileID: 8300000, guid: b8492f1f5dd7b2640a3f963bf7e3ee77, type: 3}
@@ -970,6 +971,9 @@ MonoBehaviour:
   BossDie: {fileID: 8300000, guid: a9c74c2e96ef8494a925963e41730133, type: 3}
   ZonbieSounds: 1
   BossSounds: 1
+  Img: {fileID: 0}
+  Fade: {fileID: 0}
+  hpBar: {fileID: 0}
 --- !u!195 &7662628781239405624
 NavMeshAgent:
   m_ObjectHideFlags: 0

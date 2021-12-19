@@ -27,13 +27,16 @@ public class UI_Click : MonoBehaviour
         switch (currentType)
         {
             case BTNType.Next:
-                SceneManager.LoadScene("Play Scene");
+                SceneManager.LoadScene("1stage");
                 break;
             case BTNType.Restart:
-                SceneManager.LoadScene("Play Scene");
+                SceneManager.LoadScene(PlayerCtrl.stageNum + "stage");
+                PlayerCtrl.key = 0;
                 break;
             case BTNType.MainMenu:
                 SceneManager.LoadScene("Main Menu");
+                PlayerCtrl.stageNum = 1;
+                PlayerCtrl.key = 0;
                 break;
             case BTNType.Back:
                 uiTest.CanvasGroupOff(optionGroup);
@@ -43,10 +46,13 @@ public class UI_Click : MonoBehaviour
                 uiTest.CameraOn();
                 break;
             case BTNType.Continue_Yes:
-                SceneManager.LoadScene("Play Scene");
+                SceneManager.LoadScene(PlayerCtrl.stageNum + "stage");
+                PlayerCtrl.key = 0;
                 break;
             case BTNType.Continue_No:
                 SceneManager.LoadScene("Main Menu");
+                PlayerCtrl.stageNum = 1;
+                PlayerCtrl.key = 0;
                 break;
         }
     }

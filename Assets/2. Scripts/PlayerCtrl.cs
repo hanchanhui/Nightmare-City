@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -45,6 +46,15 @@ public class PlayerCtrl : MonoBehaviour
     //-----------------------------------------------주형 플레이어 채력
     public int hp = 150;
 
+    //-------------------------
+    private AudioSource audioSource2;
+    public AudioClip warking;
+    public AudioClip ruuning;
+    public AudioClip emp;
+    public AudioClip AudisDIE;
+
+    private bool test = true;
+    private bool test2 = true;
     // ======================================================준하
     public UI_HpBar hpBar;
     Rigidbody rigid;
@@ -65,9 +75,12 @@ public class PlayerCtrl : MonoBehaviour
         thecrosshair = FindObjectOfType<Crosshair>(); // 조준점.
 
         rigid = GetComponent<Rigidbody>();
+
+        audioSource2 = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    public Text currentKey;
+    public Text totalKey;
     void Update()
     {
         TryRun();
@@ -79,13 +92,17 @@ public class PlayerCtrl : MonoBehaviour
         {
             applySpeed = stop;
         }
+
+        if(stageNum != 3)
+        {
+            calc();
+        }
     }
     private void LateUpdate()
     {
         // 카메라 부분.
         Vector3 playerRotate = Vector3.Scale(_camera.transform.forward, new Vector3(1, 0, 1));
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerRotate), Time.deltaTime * smoothness);
-
     }
 
     //달리기를 하는지, 취소하는지 결정
@@ -94,6 +111,11 @@ public class PlayerCtrl : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && !isDie)
         {
             Running();
+            if (test2)
+            {
+                PlaySE2(ruuning);
+                test2 = false;
+            }
             animator.SetBool("Run", isRun);
 
         }
@@ -101,7 +123,8 @@ public class PlayerCtrl : MonoBehaviour
         {
             RunningCancel();
             animator.SetBool("Run", isRun);
-
+            test2 = true;
+            PlaySE2(emp);
         }
     }
 
@@ -150,27 +173,50 @@ public class PlayerCtrl : MonoBehaviour
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test) 
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirZ <= -0.1f)
                 {
+                    
                     animator.SetBool("Up", true);
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirX >= 0.1f)
                 {
+                    
                     animator.SetBool("Up", false);
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", true);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else if (_moveDirX <= -0.1f)
                 {
+                    
                     animator.SetBool("Up", false);
                     animator.SetBool("Left", true);
                     animator.SetBool("Right", false);
                     isWalk = true;
+                    if (test)
+                    {
+                        PlaySE2(warking);
+                        test = false;
+                    }
                 }
                 else
                 {
@@ -178,6 +224,8 @@ public class PlayerCtrl : MonoBehaviour
                     animator.SetBool("Left", false);
                     animator.SetBool("Right", false);
                     isWalk = false;
+                    test = true;
+                    PlaySE2(emp);
                 }
                 thecrosshair.WalkingAnimation(isWalk);
             }
@@ -190,6 +238,7 @@ public class PlayerCtrl : MonoBehaviour
     {
         if(hasGun[1])
         {
+            equipGun = Gun[0]; // 권총을 꺼줌.
             equipGun.SetActive(false); // 원래 들고있던 총 끄기
             equipGun = Gun[1]; // 1번 배열 값을 받고
             Gun[1].SetActive(true); // 먹은 총으로 교체
@@ -199,10 +248,10 @@ public class PlayerCtrl : MonoBehaviour
     // Item 스크립트에 값 받아오고 배열에 저장하고 삭제
     public GameObject weaponImg1;
     public GameObject weaponImg2;
+    static public int key = 0; // 열쇠 개수
+    static public int stageNum = 1; // stage 번호
     void Interation()
     {
-        equipGun = Gun[0];
-        
         if (nearObject != null)
         {
             if(nearObject.tag == "MachineGun")
@@ -216,12 +265,75 @@ public class PlayerCtrl : MonoBehaviour
 
                 Destroy(nearObject);// 삭제
             }
+            else if (nearObject.tag == "Key")
+            {
+                key++;
+                currentKey.text = key.ToString();
+                Destroy(nearObject);
+                if(stageNum == 1)
+                {
+                    if(key == 2)
+                    {
+                        createPortal();
+                    }
+                }
+                else if(stageNum == 2)
+                {
+                    if(key == 3)
+                    {
+                        createPortal();
+                    }
+                }
+            }
+            else if (nearObject.tag == "Portal")
+            {
+                stageNum++;
+                SceneManager.LoadScene(stageNum + "stage");
+            }
         }
+    }
+
+    bool isNext = true;
+    void calc()
+    {
+        if (stageNum == 1)
+        {
+            currentKey.text = key.ToString();
+            totalKey.text = "2";
+        }
+        else if (stageNum == 2)
+        {
+            if(isNext == true)
+            {
+                key = 0;
+                isNext = false;
+            }
+            currentKey.text = key.ToString();
+            totalKey.text = "3";
+        }
+    }
+
+    public GameObject door;
+    public GameObject portal;
+    void createPortal()
+    {
+        door.SetActive(false);
+        portal.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "MachineGun")
+        {
+            nearObject = other.gameObject;
+            Interation();
+        }
+        else if(other.tag == "Key")
+        {
+            nearObject = other.gameObject;
+            Interation();
+        }
+        else if (other.tag == "Portal")
         {
             nearObject = other.gameObject;
             Interation();
@@ -236,6 +348,24 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+    private void PlaySE2(AudioClip _clip)
+    {
+        audioSource2.clip = _clip;
+        audioSource2.Play();
+        if(isRun)
+        {
+            audioSource2.loop = true;
+        }
+        else
+            audioSource2.loop = false;
+    }
+
+    private void Playdie(AudioClip _clip)
+    {
+        audioSource2.clip = _clip;
+        audioSource2.PlayOneShot(_clip);
+    }
+
     public UI_Died uiDied;
     public GameObject dieCamera;
     public void GetDamage(int damage) // 플레이어 죽음.
@@ -245,6 +375,7 @@ public class PlayerCtrl : MonoBehaviour
         if (hp <= 0)
         {
             animator.SetTrigger("Die");
+            Playdie(AudisDIE);
             dieCamera.GetComponent<CameraMove>().enabled = false; // 죽었을 때 카메라 움직이지 않게 하려고 이름 저따구임
             //rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             isDie = true;

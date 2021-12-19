@@ -102,14 +102,17 @@ public class AttackController : MonoBehaviour
     }
 
     
-    private void MachineGuncarry()
+    private void MachineGuncarry() // 우지 부분.
     {
         PlayerCtrl player = GetComponent<PlayerCtrl>();
         if (player.hasGun[1])
         {
             currentGun.carryBulletCount = currentGun.carryBulletCount2; // 우지 탄창 9999 설정
+            currentGun.reloadBulletCount = currentGun.reloadBulletCount2; // 우지 최대 장전 수.
         }
     }
+
+
 
     private void Hit()
     {
@@ -139,15 +142,12 @@ public class AttackController : MonoBehaviour
         }
     }
 
-    
-
     IEnumerator ReloadCoroution()
     {
         if (currentGun.carryBulletCount > 0)
         {
             isReload = true;
             currentGun.anim.SetTrigger("Reload");
-            
                 
             currentGun.carryBulletCount += currentGun.currentBulletCount;
             currentGun.currentBulletCount = 0;
@@ -162,7 +162,7 @@ public class AttackController : MonoBehaviour
             else
             {
                 currentGun.currentBulletCount = currentGun.carryBulletCount;
-                currentGun.currentBulletCount = 0;
+                currentGun.carryBulletCount = 0;
             }
 
             isReload = false;
