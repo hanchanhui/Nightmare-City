@@ -122,8 +122,8 @@ public class AttackController : MonoBehaviour
                         0)
             , out hitInfo, currentGun.range))
         {
-            //MonsterCtrl mon = GetComponent<MonsterCtrl>();
-            if (hitInfo.transform.tag == "Enemy" /*&& !mon.MonsterDie*/)
+            
+            if (hitInfo.transform.tag == "Enemy")
             {
                 hitInfo.transform.GetComponent<MonsterCtrl>().TakeDamage(damage);
                 hitInfo.transform.GetComponent<MonsterCtrl>().CreateBloodEffect();

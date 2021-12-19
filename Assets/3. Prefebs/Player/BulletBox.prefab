@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  value: 40
+  value: 3
   RotSpeed: 30
 --- !u!1 &4540003292131678020
 GameObject:

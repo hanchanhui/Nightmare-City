@@ -9,18 +9,23 @@ public class MonsterManager : MonoBehaviour
     int prevTime;
     [Tooltip("전체 시간")]
     private float surviveTime;
-    [Tooltip("생성 시간 마무리")]
-    private bool surviveEnd = true;
-    //[Tooltip("실행 조건")]
-    //int prevEventTime;
+
     [Tooltip("랜덤 생성 범위 설정")]
     public float randomX;
     public float randomZ;
     int prevMonsterCheck;
 
+    private AudioSource aud;
 
     public GameObject monsterPrefab;
+    public AudioClip Music;
 
+    private void Start()
+    {
+        aud = GetComponent<AudioSource>();
+        aud.clip = Music;
+        aud.Play();
+    }
 
     void Update()
     {
