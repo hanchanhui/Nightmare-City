@@ -93,7 +93,6 @@ public class MonsterCtrl : MonoBehaviour
             if (ZonbieSounds)
             {
                 MonsterSound("Idle");
-                Debug.Log("ZonBie»ç¿îµå");
                 ZonbieSounds = false;
             }
         }

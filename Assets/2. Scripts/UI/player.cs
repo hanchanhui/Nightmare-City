@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 // 클래스에 System.Serializable이라는 어트리뷰트(Attribute)를 명시해야 Inspector뷰에 노출됨
 [System.Serializable]
@@ -92,6 +93,7 @@ public class player : MonoBehaviour
 
     static public int key = 0;
     public int stageNum = 0;
+    public Text currentKey;
     void OnTriggerEnter(Collider coll)
     {
         //// 충돌한 Collider가 몬스터의 PUNCH이면 Player의 HP 차감
@@ -112,7 +114,7 @@ public class player : MonoBehaviour
         if(coll.gameObject.tag == "Key")
         {
             key++;
-            Debug.Log("열쇠 획득 : " + key + "번째");
+            currentKey.text = key.ToString();
             Destroy(coll.gameObject);
             if (key == 2 || key == 5)
             {
