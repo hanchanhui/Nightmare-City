@@ -9,6 +9,6 @@ public class UI_HpBar : MonoBehaviour
 
     public void SetHP(float hp)
     {
-        hpbar.fillAmount = (float)hp / 150f;
+        hpbar.fillAmount = (float)hp / 100f;
     }
 }

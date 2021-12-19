@@ -36,7 +36,7 @@ public class MonsterManager : MonoBehaviour
     {
         surviveTime += Time.deltaTime;
         
-        if(surviveTime % 5f <= 0.01f && prevMonsterCheck == 4)
+        if(surviveTime % 5f <= 0.01f)
         {
             float MoveX = Random.Range(-randomX, randomX);
             float MoveZ = Random.Range(-randomZ, randomZ);
@@ -47,6 +47,6 @@ public class MonsterManager : MonoBehaviour
             //monster.transform.parent = ;
             monster.transform.localPosition = randompos;
         }
-        prevMonsterCheck = (int)(surviveTime % 5f);
+        //prevMonsterCheck = (int)(surviveTime % 5f);
     }
 }

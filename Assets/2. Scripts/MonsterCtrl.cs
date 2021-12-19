@@ -148,7 +148,7 @@ public class MonsterCtrl : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         Fade.FadeIn();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene("clear");
     }
 

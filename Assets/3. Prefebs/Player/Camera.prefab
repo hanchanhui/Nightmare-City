@@ -120,7 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectTofollow: {fileID: 0}
   followSpeed: 50
-  sensitivity: 500
+  sensitivity: 200
   clampAngle: 70
   realCamera: {fileID: 4723959123274330903}
   dirNormalized: {x: 0, y: 0, z: 0}
