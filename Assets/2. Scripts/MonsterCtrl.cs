@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class MonsterCtrl : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class MonsterCtrl : MonoBehaviour
     public bool ZonbieSounds = true;
     public bool BossSounds = true;
 
-
+    Rigidbody rigid;
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
@@ -73,7 +74,8 @@ public class MonsterCtrl : MonoBehaviour
         }
         if(Boss)
         {
-            BossAni = GetComponentInChildren<Animator>();
+            BossAni = GetComponent<Animator>();
+            rigid = GetComponent<Rigidbody>();
         }
     }
 
@@ -130,6 +132,24 @@ public class MonsterCtrl : MonoBehaviour
                 BossAnimator("IsAttackTrue");
             }
         }
+
+        if(health <= 0)
+        {
+            if(Boss)
+            {
+                Img.SetActive(true);
+                StartCoroutine(ifBossDie());
+            }
+        }
+    }
+    public GameObject Img;
+    public UI_Fade Fade;
+    public IEnumerator ifBossDie()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Fade.FadeIn();
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene("clear");
     }
 
     // Freedom Move
@@ -256,9 +276,14 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+    public UI_BossHP hpBar;
     public void TakeDamage(int damage)
     {
         health -= damage;
+        if(Boss)
+        {
+            hpBar.SetHP(health);
+        }
 
         if (health <= 0)
         {
@@ -290,10 +315,12 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
-
     private void DestroyEnemy()
     {
-        Destroy(gameObject);
+        if(Monster)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Zombie Animation
