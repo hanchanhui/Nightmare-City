@@ -93,7 +93,10 @@ public class PlayerCtrl : MonoBehaviour
             applySpeed = stop;
         }
 
-        calc();
+        if(stageNum != 3)
+        {
+            calc();
+        }
     }
     private void LateUpdate()
     {
@@ -267,9 +270,19 @@ public class PlayerCtrl : MonoBehaviour
                 key++;
                 currentKey.text = key.ToString();
                 Destroy(nearObject);
-                if (key == 2 || key == 5)
+                if(stageNum == 1)
                 {
-                    createPortal();
+                    if(key == 2)
+                    {
+                        createPortal();
+                    }
+                }
+                else if(stageNum == 2)
+                {
+                    if(key == 3)
+                    {
+                        createPortal();
+                    }
                 }
             }
             else if (nearObject.tag == "Portal")
