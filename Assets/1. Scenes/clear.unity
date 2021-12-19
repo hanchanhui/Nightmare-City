@@ -341,7 +341,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 990781515153798114, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
       propertyPath: m_Volume
-      value: 0.054
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 990781515153798114, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
       propertyPath: m_audioClip
@@ -871,6 +871,7 @@ GameObject:
   - component: {fileID: 1104047540}
   - component: {fileID: 1104047539}
   - component: {fileID: 1104047541}
+  - component: {fileID: 1104047542}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -953,6 +954,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &1104047542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104047537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1122657651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
