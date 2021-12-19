@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6588288439322383001, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: carryBulletCount2
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 6694023979660815416, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: theCam
       value: 
@@ -14110,11 +14114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5458412623451688462, guid: 31b276ccce55b0c448fc58632949aba4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 500
+      value: 525
       objectReference: {fileID: 0}
     - target: {fileID: 5458412623451688462, guid: 31b276ccce55b0c448fc58632949aba4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 400
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 5458412623451688462, guid: 31b276ccce55b0c448fc58632949aba4, type: 3}
       propertyPath: m_LocalRotation.w

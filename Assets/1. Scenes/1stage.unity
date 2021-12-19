@@ -591,18 +591,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 826808475, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2050627406, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2438846494587291267, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_Text
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5066910880966460461, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
       propertyPath: theAttackController
       value: 
@@ -694,18 +682,6 @@ PrefabInstance:
     - target: {fileID: 5066910881819851614, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7442259624798656328, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 049f406f6390af44a977a1d93b9c66f5, type: 3}
-    - target: {fileID: 8289818738474999525, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 190
-      objectReference: {fileID: 0}
-    - target: {fileID: 8289818738474999525, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
