@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCtrl : MonoBehaviour
 {
@@ -241,10 +242,10 @@ public class PlayerCtrl : MonoBehaviour
     // Item 스크립트에 값 받아오고 배열에 저장하고 삭제
     public GameObject weaponImg1;
     public GameObject weaponImg2;
+    static public int key = 0;
+    public Text currentKey;
     void Interation()
     {
-        
-        
         if (nearObject != null)
         {
             if(nearObject.tag == "MachineGun")
@@ -258,12 +259,44 @@ public class PlayerCtrl : MonoBehaviour
 
                 Destroy(nearObject);// 삭제
             }
+            else if (nearObject.tag == "Key")
+            {
+                key++;
+                currentKey.text = key.ToString();
+                Destroy(nearObject);
+                if (key == 2 || key == 5)
+                {
+                    createPortal();
+                }
+            }
+            else if (nearObject.tag == "Portal")
+            {
+                SceneManager.LoadScene("2stage");
+            }
         }
+    }
+
+    public GameObject door;
+    public GameObject portal;
+    void createPortal()
+    {
+        door.SetActive(false);
+        portal.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "MachineGun")
+        {
+            nearObject = other.gameObject;
+            Interation();
+        }
+        else if(other.tag == "Key")
+        {
+            nearObject = other.gameObject;
+            Interation();
+        }
+        else if (other.tag == "Portal")
         {
             nearObject = other.gameObject;
             Interation();
