@@ -12418,12 +12418,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1290087875, guid: e84babab403235740ac996c666579907, type: 3}
-      propertyPath: m_Speed
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1290087875, guid: e84babab403235740ac996c666579907, type: 3}
       propertyPath: m_Acceleration
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1290087876, guid: e84babab403235740ac996c666579907, type: 3}
       propertyPath: Img
@@ -12437,10 +12433,6 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1707357707}
-    - target: {fileID: 1290087876, guid: e84babab403235740ac996c666579907, type: 3}
-      propertyPath: health
-      value: 3000
-      objectReference: {fileID: 0}
     - target: {fileID: 7585142500331654666, guid: e84babab403235740ac996c666579907, type: 3}
       propertyPath: m_Name
       value: Boss Variant
@@ -12488,10 +12480,6 @@ PrefabInstance:
     - target: {fileID: 7586994870249372556, guid: e84babab403235740ac996c666579907, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7998748156841666202, guid: e84babab403235740ac996c666579907, type: 3}
-      propertyPath: m_Radius
-      value: 0.014
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e84babab403235740ac996c666579907, type: 3}

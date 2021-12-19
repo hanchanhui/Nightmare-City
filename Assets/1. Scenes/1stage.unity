@@ -1877,9 +1877,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -2774,9 +2794,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (22)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -6837,13 +6877,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (6)
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveX
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -10084,9 +10144,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -10154,7 +10234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &334770354 stripped
 Transform:
@@ -17578,9 +17658,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -20190,9 +20290,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -21490,9 +21610,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -23597,9 +23737,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -23749,9 +23909,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveX
@@ -23760,6 +23932,14 @@ PrefabInstance:
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveZ
       value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -23798,6 +23978,10 @@ PrefabInstance:
       propertyPath: uiDied
       value: 
       objectReference: {fileID: 894535293}
+    - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: runSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: totalKey
       value: 
@@ -25791,9 +25975,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -29465,9 +29669,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -30730,9 +30954,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -33575,9 +33815,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -36433,9 +36693,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveX
@@ -36444,6 +36716,14 @@ PrefabInstance:
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveZ
       value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -37093,9 +37373,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -53730,9 +54030,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -54035,9 +54351,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -58173,9 +58509,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -58723,9 +59079,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -58797,9 +59173,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -58939,9 +59335,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -59798,9 +60214,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveX
@@ -59809,6 +60237,14 @@ PrefabInstance:
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveZ
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -63580,9 +64016,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -65209,13 +65665,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Speed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405624, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: m_Acceleration
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405625, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_Name
       value: Zombi (16)
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: MonsterMoveZ
       value: -110
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: sightRangecharge
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
@@ -65386,6 +65862,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 674730265013053034, guid: 266b1fd52158c3e4fab1776e3a55a8e1, type: 3}
   m_PrefabInstance: {fileID: 1236328637}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &990781514650334962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 197
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798115, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990781515153798141, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
+      propertyPath: m_Name
+      value: BGM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 45ff5225fd5a39848846059c30ebd734, type: 3}
 --- !u!1001 &1227956626234310799
 PrefabInstance:
   m_ObjectHideFlags: 0

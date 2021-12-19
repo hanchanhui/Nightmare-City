@@ -17,15 +17,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7074634910996469229, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 7074634910996469229, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 7074634910996469229, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.3514824
+      value: 16.2
       objectReference: {fileID: 0}
     - target: {fileID: 7074634910996469229, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61,11 +61,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: sightRange
-      value: 170
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7662628781239405627, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
       propertyPath: sightRangecharge
-      value: 170
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b52fc70afdf2a344a79e3e0c64f6171, type: 3}
