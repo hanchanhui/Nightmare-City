@@ -49,6 +49,7 @@ public class MonsterCtrl : MonoBehaviour
 
     // Die Check
     public bool MonsterDie = false;
+    public bool MonsterDieCheck = false;
 
     // Sound
     public AudioClip MonsterIdle;
@@ -261,11 +262,13 @@ public class MonsterCtrl : MonoBehaviour
 
         if (health <= 0)
         {
+            MonsterDieCheck = true;
             if (Monster)
             {
                 MonsterAni("IsDeadTrue");
                 MonsterDie = true;
                 ZonbieSounds = true;
+                gameObject.tag = "DieEnemy";
                 if (ZonbieSounds)
                 {
                     MonsterSound("Die");
@@ -276,6 +279,7 @@ public class MonsterCtrl : MonoBehaviour
             {
                 BossAnimator("IsDeadTrue");
                 BossSounds = true;
+                gameObject.tag = "DieEnemy";
                 if (BossSounds)
                 {
                     BossSound("Die");
@@ -286,12 +290,13 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+
     private void DestroyEnemy()
     {
         Destroy(gameObject);
     }
 
-    // Zombi Animation
+    // Zombie Animation
     private void MonsterAni(string Ani)
     {
         switch (Ani)
@@ -321,6 +326,7 @@ public class MonsterCtrl : MonoBehaviour
                 break;
         }
     }
+
     // Boss Animation
     private void BossAnimator(string Ani)
     {
@@ -340,24 +346,7 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
-
-    public void CreateBloodEffect()
-    {
-        // 趋如 积己
-        if (Monster)
-        {
-            Vector3 pos = transform.position + transform.up * 5f;
-            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
-            Destroy(blood1, 1.0f);
-        }else if(Boss)
-        {
-            Vector3 pos = transform.position + transform.up * 7f;
-            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
-            Destroy(blood1, 1.0f);
-        }
-
-    }
-
+    // Monster Sound
     private void MonsterSound(string action)
     {
         switch(action)
@@ -377,7 +366,7 @@ public class MonsterCtrl : MonoBehaviour
         }
         audioSource.Play();
     }
-
+    // Boss Sound
     private void BossSound(string action)
     {
         switch (action)
@@ -393,6 +382,25 @@ public class MonsterCtrl : MonoBehaviour
                 break;
         }
         audioSource.Play();
+    }
+
+    // Particle
+    public void CreateBloodEffect()
+    {
+        // 趋如 积己
+        if (Monster)
+        {
+            Vector3 pos = transform.position + transform.up * 5f;
+            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
+            Destroy(blood1, 1.0f);
+        }
+        else if (Boss)
+        {
+            Vector3 pos = transform.position + transform.up * 7f;
+            GameObject blood1 = (GameObject)Instantiate(bloodEffect, pos, Quaternion.identity);
+            Destroy(blood1, 1.0f);
+        }
+
     }
 
     // Player Check Range 
