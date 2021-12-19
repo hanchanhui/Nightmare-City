@@ -78,7 +78,8 @@ public class PlayerCtrl : MonoBehaviour
         audioSource2 = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+    public Text currentKey;
+    public Text totalKey;
     void Update()
     {
         TryRun();
@@ -90,13 +91,14 @@ public class PlayerCtrl : MonoBehaviour
         {
             applySpeed = stop;
         }
+
+        calc();
     }
     private void LateUpdate()
     {
         // 카메라 부분.
         Vector3 playerRotate = Vector3.Scale(_camera.transform.forward, new Vector3(1, 0, 1));
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(playerRotate), Time.deltaTime * smoothness);
-
     }
 
     //달리기를 하는지, 취소하는지 결정
@@ -242,8 +244,8 @@ public class PlayerCtrl : MonoBehaviour
     // Item 스크립트에 값 받아오고 배열에 저장하고 삭제
     public GameObject weaponImg1;
     public GameObject weaponImg2;
-    static public int key = 0;
-    public Text currentKey;
+    static public int key = 0; // 열쇠 개수
+    static public int stageNum = 1; // stage 번호
     void Interation()
     {
         if (nearObject != null)
@@ -271,8 +273,29 @@ public class PlayerCtrl : MonoBehaviour
             }
             else if (nearObject.tag == "Portal")
             {
-                SceneManager.LoadScene("2stage");
+                stageNum++;
+                SceneManager.LoadScene(stageNum + "stage");
             }
+        }
+    }
+
+    bool isNext = true;
+    void calc()
+    {
+        if (stageNum == 1)
+        {
+            currentKey.text = key.ToString();
+            totalKey.text = "2";
+        }
+        else if (stageNum == 2)
+        {
+            if(isNext == true)
+            {
+                key = 0;
+                isNext = false;
+            }
+            currentKey.text = key.ToString();
+            totalKey.text = "3";
         }
     }
 
