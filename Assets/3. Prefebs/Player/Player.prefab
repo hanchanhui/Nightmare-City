@@ -2646,8 +2646,12 @@ MonoBehaviour:
   AudisDIE: {fileID: 8300000, guid: 724c638ae73572e44a40a5c165bc1f63, type: 3}
   hpBar: {fileID: 0}
   isDie: 0
+  currentKey: {fileID: 0}
+  totalKey: {fileID: 0}
   weaponImg1: {fileID: 0}
   weaponImg2: {fileID: 0}
+  door: {fileID: 0}
+  portal: {fileID: 0}
   uiDied: {fileID: 0}
   dieCamera: {fileID: 0}
 --- !u!143 &4629882861809134912
@@ -2929,7 +2933,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
