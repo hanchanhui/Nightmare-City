@@ -51,6 +51,7 @@ public class PlayerCtrl : MonoBehaviour
     public AudioClip warking;
     public AudioClip ruuning;
     public AudioClip emp;
+    public AudioClip AudisDIE;
 
     private bool test = true;
     private bool test2 = true;
@@ -349,6 +350,7 @@ public class PlayerCtrl : MonoBehaviour
         if (hp <= 0)
         {
             animator.SetTrigger("Die");
+            PlaySE2(AudisDIE);
             dieCamera.GetComponent<CameraMove>().enabled = false; // 죽었을 때 카메라 움직이지 않게 하려고 이름 저따구임
             //rigid.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             isDie = true;
