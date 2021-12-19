@@ -197,6 +197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09a558d570f06c64b87db54263eb63bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &499609076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 468374185444735119, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
+  m_PrefabInstance: {fileID: 5066910881578185003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &554231098
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +557,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 579900856, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
   m_PrefabInstance: {fileID: 5066910881578185003}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597153159 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2438846494587291267, guid: da75ac5575a3c6f488d33fb0241df6f2, type: 3}
+  m_PrefabInstance: {fileID: 5066910881578185003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1758660127 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4737019219186780023, guid: bfac8063ebbb424458222a6a4517254c, type: 3}
@@ -601,9 +623,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1758660127}
     - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: totalKey
+      value: 
+      objectReference: {fileID: 1597153159}
+    - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: dieCamera
       value: 
       objectReference: {fileID: 1762736250}
+    - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
+      propertyPath: currentKey
+      value: 
+      objectReference: {fileID: 499609076}
     - target: {fileID: 7008657004370363130, guid: 1f04e0c1084864d46a265bf57f75f98c, type: 3}
       propertyPath: weaponImg1
       value: 
