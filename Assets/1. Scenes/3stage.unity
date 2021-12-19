@@ -12437,6 +12437,10 @@ PrefabInstance:
       propertyPath: hpBar
       value: 
       objectReference: {fileID: 1707357707}
+    - target: {fileID: 1808227468, guid: e84babab403235740ac996c666579907, type: 3}
+      propertyPath: Damage
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7585142500331654666, guid: e84babab403235740ac996c666579907, type: 3}
       propertyPath: m_Name
       value: Boss Variant
