@@ -55903,6 +55903,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4723959124253194428, guid: feaea0b7be2a4914aba96a521b3ff093, type: 3}
+      propertyPath: sensitivity
+      value: 100.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723959124253194428, guid: feaea0b7be2a4914aba96a521b3ff093, type: 3}
       propertyPath: objectTofollow
       value: 
       objectReference: {fileID: 792174421}

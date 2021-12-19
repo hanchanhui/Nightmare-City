@@ -4518,7 +4518,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quad
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8051392839297694635, guid: b179cdcdee7dd4e408aa7f479ac76897, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b179cdcdee7dd4e408aa7f479ac76897, type: 3}
 --- !u!4 &331587847 stripped
 Transform:
