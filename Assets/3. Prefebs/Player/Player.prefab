@@ -2641,7 +2641,7 @@ MonoBehaviour:
   - {fileID: 1565368703602602749}
   - {fileID: 7024985321073566935}
   hasGun: 010000
-  hp: 150
+  hp: 100
   warking: {fileID: 8300000, guid: d8a6dc63cd2b6a34387adfceb0e46ecb, type: 3}
   ruuning: {fileID: 8300000, guid: a13d1c8b2c5490b4a92b12e7e8a71767, type: 3}
   emp: {fileID: 0}
@@ -2687,7 +2687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: BasicGun
-  range: 100
+  range: 80
   accuracy: 0.04
   fireRate: 0.5
   fireRate2: 0.1
@@ -2696,7 +2696,7 @@ MonoBehaviour:
   reloadBulletCount: 9
   reloadBulletCount2: 30
   currentBulletCount: 0
-  carryBulletCount: 3
+  carryBulletCount: 0
   carryBulletCount2: 9999
   retroActionForce: 0
   retroActionFineSightForce: 0
